@@ -7,9 +7,18 @@ class HomeScreen extends Component {
     return (
       <Container>
         <Header />
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
+        <List>
+          <ListHead></ListHead>
+          <ListShows></ListShows>
+        </List>
+        <List>
+          <ListHead></ListHead>
+          <ListShows></ListShows>
+        </List>
+        <List>
+          <ListHead></ListHead>
+          <ListShows></ListShows>
+        </List>
       </Container>
     );
   }
@@ -17,15 +26,32 @@ class HomeScreen extends Component {
 
 const Container = styled.View`
   display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
 `;
 
-const Box = styled.View`
-  width: 50px;
-  height: 50px;
+const List = styled.View`
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 25%;
   border: solid 1px #ff7900;
-  margin: 5px;
+  margin: 15px 0 15px 0;
+`;
+
+const ListHead = styled.View`
+  width: 90%;
+  height: 20%%;
+  border: solid 1px #ff7900;
+  margin-top: 5px;
+`;
+
+const ListShows = styled.View`
+  width: 90%;
+  height: 70%%;
+  border: solid 1px #ff7900;
+  margin-top: 5px;
 `;
 
 export default HomeScreen;
