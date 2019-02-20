@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 import styled from 'styled-components/native';
-import Header from '../Header/Header';
 
-class HomeScreen extends Component {
+class Header extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
+        <Text>Header</Text>
       </Container>
     );
   }
@@ -17,15 +14,10 @@ class HomeScreen extends Component {
 
 const Container = styled.View`
   display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 100%;
-`;
-
-const Box = styled.View`
-  width: 50px;
   height: 50px;
   border: solid 1px #ff7900;
-  margin: 5px;
 `;
 
-export default HomeScreen;
+export default Header;
