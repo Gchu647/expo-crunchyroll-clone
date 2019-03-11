@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../../constants/styles';
-import { TouchableWithoutFeedback, Text } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
 import { Font } from 'expo';
-const CRUNCHY_LOGO = require('../../../assets/icons/crunchy-logo.png');
 
 class Header extends Component {
   state = {
@@ -51,8 +50,8 @@ const Container = styled.View`
 `;
 
 const IconContainer = styled.View`
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
 const LogoContainer = styled.View`
