@@ -2,10 +2,23 @@ import React, { Component } from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../../constants/styles';
-import { TouchableWithoutFeedback } from 'react-native';
+import { TouchableWithoutFeedback, Text } from 'react-native';
+import { Font } from 'expo';
 const CRUNCHY_LOGO = require('../../../assets/icons/crunchy-logo.png');
 
 class Header extends Component {
+  state = {
+    fontLoaded: false,
+  };
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'maven-pro-bold': require('../../../assets/fonts/MavenPro-Bold.ttf')
+    });
+
+    this.setState({ fontLoaded: true });
+  }
+
   render() {
     return (
       <Container>
@@ -13,7 +26,11 @@ class Header extends Component {
           <Icon name={'bars'} size={30} color={COLORS.WHITE.WHITE} />
         </IconContainer>
         <LogoContainer>
-          <Logo> crunchyroll </Logo>
+        {
+          this.state.fontLoaded ? (
+            <Logo> crunchyroll</Logo>
+          ) : null
+        }
         </LogoContainer>
         <IconContainer>
           <Icon name={'search'} size={30} color={COLORS.WHITE.WHITE} />
@@ -34,8 +51,8 @@ const Container = styled.View`
 `;
 
 const IconContainer = styled.View`
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 `;
 
 const LogoContainer = styled.View`
@@ -45,8 +62,10 @@ const LogoContainer = styled.View`
 `;
 
 const Logo = styled.Text`
-  font-size: 34px;
+  font-size: 32px;
+  font-family: maven-pro-bold;
   color: ${COLORS.WHITE.WHITE};
+  padding-top: 5px;
   text-align: center;
 `;
 
