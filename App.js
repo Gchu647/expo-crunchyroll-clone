@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { Font } from 'expo';
 import HomeScreen from './src/components/Screens/HomeScreen';
 
 class App extends Component {

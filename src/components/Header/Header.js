@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../../constants/styles';
-import { TouchableWithoutFeedback, Text, Image} from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
 const CRUNCHY_LOGO = require('../../../assets/icons/crunchy-logo.png');
 
 class Header extends Component {
@@ -13,7 +13,7 @@ class Header extends Component {
           <Icon name={'bars'} size={30} color={COLORS.WHITE.WHITE} />
         </IconContainer>
         <LogoContainer>
-          <Image source={CRUNCHY_LOGO} style={{width:50, height:50}}/>
+          <Logo> crunchyroll </Logo>
         </LogoContainer>
         <IconContainer>
           <Icon name={'search'} size={30} color={COLORS.WHITE.WHITE} />
@@ -41,6 +41,13 @@ const IconContainer = styled.View`
 const LogoContainer = styled.View`
   width: 175px;
   height: 50px;
+  text-align: center;
+`;
+
+const Logo = styled.Text`
+  font-size: 34px;
+  color: ${COLORS.WHITE.WHITE};
+  text-align: center;
 `;
 
 export default Header;
