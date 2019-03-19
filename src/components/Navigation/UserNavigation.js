@@ -78,7 +78,6 @@ const ActiveNavigationLink = styled(NavigationLink)`
 `;
 
 const NavigationLinkText = styled.Text`
-  font-family: Futura;
   color: ${COLORS.ORANGE.ORANGE};
 `;
 
