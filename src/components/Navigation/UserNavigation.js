@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/native';
-import Header from '../Header/Header';
-import UserNavigation from '../Navigation/UserNavigation'
+import { COLORS } from '../../constants/styles';
+import { TouchableWithoutFeedback, Text } from 'react-native';
 
-class HomeScreen extends Component {
+class UserNavigation extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <UserNavigation />
+        <Text>
+          Smoke Test!
+        </Text>
       </Container>
     );
   }
@@ -18,7 +19,7 @@ const Container = styled.View`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 55px;
 `;
 
-export default HomeScreen;
+export default UserNavigation;
