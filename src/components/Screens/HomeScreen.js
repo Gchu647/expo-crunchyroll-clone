@@ -16,11 +16,61 @@ class HomeScreen extends Component {
         <SubHeader>
           <SubHeaderTextContainer>
             <SubHeaderTitleText>
-              {'Trending Now'}
+              Trending Now
             </SubHeaderTitleText>
             <SubHeaderText>
-              {'Recommended for you'}
+              Recommended for you
             </SubHeaderText>
+          </SubHeaderTextContainer>
+          <AllContainer>
+            <AllText>{'All'}</AllText>
+            <IconContainer>
+              <Icon name={'angle-right'} size={20} color={COLORS.GREY.LIGHT_GREY} />
+            </IconContainer>
+          </AllContainer>
+        </SubHeader>
+        <ScrollView horizontal={true}>
+          <ImageContainer>
+            {ShowData.map((show, index) => (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('ShowDetails', show)}
+                key={index}
+              >
+                <Image source={show.image} key={index} />
+              </TouchableOpacity>
+            ))}
+          </ImageContainer>
+        </ScrollView>
+        <SubHeader>
+          <SubHeaderTextContainer>
+            <SubHeaderTitleText>
+              Continue watching for G.Chu
+            </SubHeaderTitleText>
+          </SubHeaderTextContainer>
+          <AllContainer>
+            <AllText>{'All'}</AllText>
+            <IconContainer>
+              <Icon name={'angle-right'} size={20} color={COLORS.GREY.LIGHT_GREY} />
+            </IconContainer>
+          </AllContainer>
+        </SubHeader>
+        <ScrollView horizontal={true}>
+          <ImageContainer>
+            {ShowData.map((show, index) => (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('ShowDetails', show)}
+                key={index}
+              >
+                <Image source={show.image} key={index} />
+              </TouchableOpacity>
+            ))}
+          </ImageContainer>
+        </ScrollView>
+        <SubHeader>
+          <SubHeaderTextContainer>
+            <SubHeaderTitleText>
+              Recently Added
+            </SubHeaderTitleText>
           </SubHeaderTextContainer>
           <AllContainer>
             <AllText>{'All'}</AllText>
