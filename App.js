@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import HomeScreen from './src/components/Screens/HomeScreen';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar hidden={true} />
         <HomeScreen />
      </View>
     );
