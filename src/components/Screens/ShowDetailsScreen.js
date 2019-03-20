@@ -6,6 +6,8 @@ import { COLORS } from '../../constants/styles';
 
 class ShowDetailsScreen extends Component {
   render() {
+    const { params } = this.props.navigation.state;
+
     return (
       <Container>
         <HeaderContainer>
@@ -13,6 +15,14 @@ class ShowDetailsScreen extends Component {
             <BackIconContainer>
               <Icon name={'arrow-left'} size={30} color={COLORS.ORANGE.ORANGE}/>
             </BackIconContainer>
+          </TouchableOpacity>
+          <ImageContainer>
+            <Image source={params.image} resizeMode={'contain'}/>
+          </ImageContainer>
+          <TouchableOpacity onPress={() => {}}>
+            <PlayIconContainer>
+              <Icon name={'play-circle-o'} size={60} color={COLORS.WHITE.WHITE} />
+            </PlayIconContainer>
           </TouchableOpacity>
         </HeaderContainer>
       </Container>
@@ -32,15 +42,24 @@ const TitleText = styled.Text`
 const HeaderContainer = styled.View`
 `;
 
-const ImageHeader = styled.Image`
-  width: 100%;
-  height: 150px;
-  margin-top: 10px;
-`;
-
 const BackIconContainer = styled.View`
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 10px;
 `;
+
+const ImageContainer = styled.View`
+  display: flex;
+  align-items: center;
+`;
+
+const Image = styled.Image`
+  width: 120px;
+  height: 180px;
+  margin: 5px 0px 5px 10px;
+`;
+
+const PlayIconContainer = styled.View`
+  margin-left: 10px;
+`
 
 export default ShowDetailsScreen;
