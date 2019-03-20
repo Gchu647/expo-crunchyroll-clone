@@ -21,9 +21,17 @@ class ShowDetailsScreen extends Component {
           </ImageContainer>
           <TouchableOpacity onPress={() => {}}>
             <PlayIconContainer>
-              <Icon name={'play-circle-o'} size={60} color={COLORS.WHITE.WHITE} />
+              <Icon name={'play-circle-o'} size={60} color={COLORS.ORANGE.ORANGE} />
             </PlayIconContainer>
           </TouchableOpacity>
+          <TitleContainer>
+            <TitleText>{params.title}</TitleText>
+            <TouchableOpacity onPress={() => {}}>
+              <MyListButton>
+                <Icon name={'plus'} size={10} color={COLORS.ORANGE.ORANGE} />
+              </MyListButton>
+            </TouchableOpacity>
+          </TitleContainer>
         </HeaderContainer>
       </Container>
     ) 
@@ -35,31 +43,47 @@ const Container = styled.View`
   height: 100%;
 `;
 
-const TitleText = styled.Text`
-  color: ${COLORS.ORANGE.ORANGE};
-`;
-
 const HeaderContainer = styled.View`
 `;
 
 const BackIconContainer = styled.View`
-  margin-top: 20px;
-  margin-left: 10px;
+margin-top: 20px;
+margin-left: 10px;
 `;
 
 const ImageContainer = styled.View`
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 `;
 
 const Image = styled.Image`
-  width: 120px;
-  height: 180px;
-  margin: 5px 0px 5px 10px;
+width: 120px;
+height: 180px;
+margin: 5px 0px 5px 10px;
 `;
 
 const PlayIconContainer = styled.View`
-  margin-left: 10px;
+margin-left: 10px;
 `
+const TitleContainer = styled.View`
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 10px;
+`;
+
+const TitleText = styled.Text`
+  color: ${COLORS.ORANGE.ORANGE};
+`;
+
+const MyListButton = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 30px;
+  background-color: ${COLORS.GREY.LIGHT_GREY};
+  margin-right: 10px;
+`;
 
 export default ShowDetailsScreen;
