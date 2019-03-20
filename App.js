@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// take out statusBar
 import { StyleSheet, View, StatusBar, Text, Button } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from './src/components/Screens/HomeScreen';
@@ -31,6 +32,9 @@ const AppNavigator = createStackNavigator(
     Home: {screen: HomeScreen},
     ShowDetails: {screen: ShowDetailsScreen}
   },
+  {
+    headerMode:'none',
+  }
 );
 
 export default createAppContainer(AppNavigator);
