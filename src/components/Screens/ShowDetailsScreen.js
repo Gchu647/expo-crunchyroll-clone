@@ -24,15 +24,16 @@ class ShowDetailsScreen extends Component {
               <Icon name={'play-circle-o'} size={60} color={COLORS.ORANGE.ORANGE} />
             </PlayIconContainer>
           </TouchableOpacity>
-          <TitleContainer>
-            <TitleText>{params.title}</TitleText>
-            <TouchableOpacity onPress={() => {}}>
-              <MyListButton>
-                <Icon name={'plus'} size={10} color={COLORS.ORANGE.ORANGE} />
-              </MyListButton>
-            </TouchableOpacity>
-          </TitleContainer>
         </HeaderContainer>
+        <TitleContainer>
+          <TitleText>{params.title}</TitleText>
+          <TouchableOpacity onPress={() => {}}>
+            <MyListButton>
+              <Icon name={'plus'} size={10} color={COLORS.ORANGE.ORANGE} />
+              <MyListButtonText>My List</MyListButtonText>
+            </MyListButton>
+          </TouchableOpacity>
+        </TitleContainer>
       </Container>
     ) 
   }
@@ -67,12 +68,14 @@ margin-left: 10px;
 `
 const TitleContainer = styled.View`
   display: flex;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   padding: 10px 0 10px 10px;
 `;
 
 const TitleText = styled.Text`
-  color: ${COLORS.ORANGE.ORANGE};
+  font-size: 18px;
+  color: ${COLORS.GREY.SHADOW_GREY};
 `;
 
 const MyListButton = styled.View`
@@ -84,6 +87,11 @@ const MyListButton = styled.View`
   height: 30px;
   background-color: ${COLORS.GREY.LIGHT_GREY};
   margin-right: 10px;
+`;
+
+const MyListButtonText = styled.Text`
+  color: ${COLORS.GREY.SHADOW_GREY}
+  margin-left: 5px;
 `;
 
 export default ShowDetailsScreen;
