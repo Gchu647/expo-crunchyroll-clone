@@ -30,10 +30,16 @@ class ShowDetailsScreen extends Component {
           <TouchableOpacity onPress={() => {}}>
             <MyListButton>
               <Icon name={'plus'} size={10} color={COLORS.ORANGE.ORANGE} />
-              <MyListButtonText>My List</MyListButtonText>
+              <MyListButtonText> My List </MyListButtonText>
             </MyListButton>
           </TouchableOpacity>
         </TitleContainer>
+        <SummaryContainer>
+          <SummaryHeader> ~ Summary ~ </SummaryHeader>
+          <SummaryText>{ params.summary }</SummaryText>
+          <SummaryCredits> Starring: { params.starring }</SummaryCredits>
+          <SummaryCredits> Publisher: { params.publisher }</SummaryCredits>
+        </SummaryContainer>
       </Container>
     ) 
   }
@@ -48,23 +54,23 @@ const HeaderContainer = styled.View`
 `;
 
 const BackIconContainer = styled.View`
-margin-top: 20px;
-margin-left: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
 `;
 
 const ImageContainer = styled.View`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `;
 
 const Image = styled.Image`
-width: 120px;
-height: 180px;
-margin: 5px 0px 5px 10px;
+  width: 120px;
+  height: 180px;
+  margin: 5px 0px 5px 10px;
 `;
 
 const PlayIconContainer = styled.View`
-margin-left: 10px;
+  margin-left: 10px;
 `
 const TitleContainer = styled.View`
   display: flex;
@@ -92,6 +98,26 @@ const MyListButton = styled.View`
 const MyListButtonText = styled.Text`
   color: ${COLORS.GREY.SHADOW_GREY}
   margin-left: 5px;
+`;
+
+const SummaryContainer = styled.View`
+  background-color: ${COLORS.GREY.LIGHT_GREY};
+  padding: 10px 10px 10px 10px;
+`;
+
+const SummaryHeader = styled.Text`
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: ${COLORS.GREY.SHADOW_GREY};
+`;
+
+const SummaryText = styled.Text`
+  margin-bottom: 15px;
+  color: ${COLORS.GREY.SHADOW_GREY};
+`;
+
+const SummaryCredits = styled.Text`
+  color: ${COLORS.ORANGE.ORANGE}
 `;
 
 export default ShowDetailsScreen;
