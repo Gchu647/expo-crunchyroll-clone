@@ -1,15 +1,14 @@
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import HomeScreen from '../Screens/HomeScreen';
 import ShowDetailsScreen from '../Screens/ShowDetailsScreen';
 
-const HomeStackNavigator = StackNavigator(
+const HomeStackNavigator = createStackNavigator(
   {
-    Main: {screen: HomeScreen},
-    ShowDetails: { screen: ShowDetailsScreen}
+    Home: {screen: HomeScreen},
+    ShowDetails: {screen: ShowDetailsScreen}
   },
   {
-    initialRouteName: 'Main',
-    headerMode: 'none',
+    headerMode:'none',
   }
 );
 
