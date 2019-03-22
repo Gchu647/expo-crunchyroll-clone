@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../../constants/styles';
 
@@ -10,6 +10,7 @@ class ShowDetailsScreen extends Component {
 
     return (
       <Container>
+        <StatusBar hidden={true} />
         <HeaderContainer>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
             <BackIconContainer>

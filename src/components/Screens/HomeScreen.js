@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/native';
+import { ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../../constants/styles';
 import Header from '../Header/Header';
 import UserNavigation from '../Navigation/UserNavigation';
-import { ScrollView, TouchableOpacity } from 'react-native';
 import ShowData from '../../data/data';
 
 class HomeScreen extends Component {
   render() {
     return (
       <Container>
+        <StatusBar hidden={true} />
         <Header />
         <UserNavigation />
         <SubHeader>
